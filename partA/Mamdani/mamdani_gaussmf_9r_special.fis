@@ -1,0 +1,49 @@
+[System]
+Name='mamdani_gaussmf_9r_special'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[-1 1]
+NumMFs=3
+MF1='NEGATIVE':'gaussmf',[0.4247 -1]
+MF2='ZERO':'gaussmf',[0.4247 0]
+MF3='POSITIVE':'gaussmf',[0.4247 1]
+
+[Input2]
+Name='input2'
+Range=[-1 1]
+NumMFs=3
+MF1='NEGATIVE':'gaussmf',[0.4247 -1]
+MF2='ZERO':'gaussmf',[0.4247 0]
+MF3='POSITIVE':'gaussmf',[0.4247 1]
+
+[Output1]
+Name='output1'
+Range=[-1 1]
+NumMFs=5
+MF1='NEGATIVE_BIG':'gaussmf',[0.2123 -1]
+MF2='NEGATIVE':'gaussmf',[0.2123 -0.5015]
+MF3='ZERO':'gaussmf',[0.2123 0]
+MF4='POSITIVE':'gaussmf',[0.2123 0.5]
+MF5='POSITIVE_BIG':'gaussmf',[0.2123 1]
+
+[Rules]
+1 1, 1 (1) : 1
+2 1, 2 (1) : 1
+3 1, 3 (1) : 1
+1 2, 2 (1) : 1
+2 2, 3 (1) : 1
+3 2, 4 (1) : 1
+1 3, 3 (1) : 1
+2 3, 4 (1) : 1
+3 3, 5 (1) : 1
